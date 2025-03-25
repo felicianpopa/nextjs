@@ -21,7 +21,16 @@ export default function AuthLayout({
   return (
     <div>
       <div>
-        <input value={input} onChange={(e) => setInput(e.target.value)} />
+        <input
+          className="border-2 border-black"
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+        />
+        <h2 className="text-red-500">
+          The input value remains the same when navigating between pages with
+          the same layout for layout.tsx.{" "}
+          <strong>That is why we use template.tsx</strong>
+        </h2>
       </div>
       {navLinks.map((link) => {
         const isActive =
