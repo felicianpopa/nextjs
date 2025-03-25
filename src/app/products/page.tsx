@@ -1,6 +1,7 @@
 import Link from "next/link";
 
-const Products = () => {
+const Products = async () => {
+  await new Promise((resolve) => setTimeout(resolve, 1000));
   const prodctId = 100;
   return (
     <div>
