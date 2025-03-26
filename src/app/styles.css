@@ -1,1 +1,10 @@
 @import "tailwindcss";
+
+h1 {
+    font-size: 32px;
+}
+
+a {
+    text-decoration: underline;
+    color: blue !important;
+}
