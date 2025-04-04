@@ -1,12 +1,14 @@
+import React from "react";
+import ImageSlider from "@/components/ImageSlider";
 import { serverSideFunction } from "@/utils/server-utils";
 
 const ServerRoutePage = () => {
   const result = serverSideFunction();
   return (
-    <div>
-      <h1>Server route</h1>
+    <>
+      <ImageSlider />
       <p>Result: {result}</p>
-    </div>
+    </>
   );
 };
 
