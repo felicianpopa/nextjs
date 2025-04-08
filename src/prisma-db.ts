@@ -65,6 +65,7 @@ export async function updateProduct(
 
 export async function deleteProduct(id: number) {
   await new Promise((resolve) => setTimeout(resolve, 1500));
+  // throw new Error("Failed to delete product (simulated error)");
   return prisma.product.delete({
     where: { id },
   });
