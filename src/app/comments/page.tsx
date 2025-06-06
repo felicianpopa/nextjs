@@ -6,7 +6,18 @@ interface Comment {
 }
 
 async function getComments(): Promise<Comment[]> {
-  const res = await fetch("http://localhost:3000/comments/api", {
+  // Dynamic URL construction that works with any port
+  const protocol = process.env.NODE_ENV === "development" ? "http" : "https";
+  const host = process.env.VERCEL_URL || "localhost";
+  const port = process.env.PORT || "3000";
+
+  // In development, include port; in production, don't
+  const baseUrl =
+    process.env.NODE_ENV === "development"
+      ? `${protocol}://${host}:${port}`
+      : `${protocol}://${host}`;
+
+  const res = await fetch(`${baseUrl}/comments/api`, {
     cache: "no-store",
   });
 
