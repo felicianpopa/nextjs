@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { ClientComponentTwo } from "./client-component-two";
-export const ClientComponentOne = () => {
+export const ClientComponentOne = ({ children }) => {
   const [name, setName] = useState("Batman");
   return (
     <>
@@ -14,6 +14,7 @@ export const ClientComponentOne = () => {
         Client component one <strong>{name}</strong>
       </h1>
       <ClientComponentTwo />
+      {children}
     </>
   );
 };
